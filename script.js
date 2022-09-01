@@ -7,8 +7,12 @@ const cardsEl = document.getElementById("cards-el");
 startBtn.addEventListener("click", startGame);
 newCard.addEventListener("click", newCardFunc);
 
-let firstCard = 5;
-let secondCard = 10;
+function getRandomCard() {
+  return Math.floor(Math.random() * 13) + 1;
+}
+
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 let cards = [firstCard, secondCard]; //array of cards
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -42,7 +46,7 @@ function renderGame() {
 }
 
 function newCardFunc() {
-  let card = 10;
+  let card = getRandomCard();
   sum += card;
   cards.push(card);
   renderGame();
@@ -54,3 +58,29 @@ function newCardFunc() {
 // for (let i = 0; i < sentence.length; i++) {
 //   greetingEl.textContent += sentence[i] + " ";
 // }
+
+//RETURN VALUE
+// let player1Time = 102;
+// let player2Time = 107;
+
+// function totalraceTime() {
+//   return player1Time + player2Time;
+// }
+
+// let total = totalraceTime();
+
+// console.log(total);
+
+//GET RANDOM NUMBER
+// let randomNumberFloor = Math.floor(Math.random() * 2);
+// let randomNumberCeil = Math.ceil(Math.random() * 2);
+
+// console.log(randomNumberFloor); //can return only 0, 1
+// console.log(randomNumberCeil); //can return only 1, 2
+
+// function rollDice() {
+//   let diceNumber = Math.floor(Math.random() * 6) + 1;
+//   return diceNumber;
+// }
+
+// console.log(rollDice());
